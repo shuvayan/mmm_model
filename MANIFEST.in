@@ -1,0 +1,18 @@
+include *.txt
+include *.md
+include *.pkl
+recursive-include ./ollies_model *
+
+include ollies_model/datasets/bike-rental-dataset.csv
+include ollies_model/datasets/test.csv
+include ollies_model/trained_models/*.pkl
+include ollies_model/VERSION
+include ollies_model/config.yml
+
+include ./requirements/requirements.txt
+include ./requirements/test_requirements.txt
+exclude *.log
+exclude *.cfg
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

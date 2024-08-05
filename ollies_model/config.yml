@@ -1,0 +1,61 @@
+# Package Overview
+package_name: ollies_model
+
+# Data Files
+training_data_file: dummy_data_mmm.csv
+
+# Variables
+# The variable we are attempting to predict (cnt)
+target: revenue
+
+pipeline_name: ollies_model
+pipeline_save_file: ollies_model_output__v
+
+# Features that will go inside processing pipeline
+features:
+  - dteday
+  - season
+  - hr
+  - holiday
+  - weekday
+  - workingday
+  - weathersit
+  - temp
+  - atemp
+  - hum
+  - windspeed
+  - yr # generated from dteday colum <--Before pipeline alongwith loading the data
+  - mnth # generated from dteday colum <--Before pipeline alongwith loading the data
+
+
+unused_fields:  # Features to drop before pipeline
+  - casual
+  - registered
+
+
+holiday_mappings:
+  - Yes: 0
+  - No: 1
+  
+# Features names
+
+date_var: dteday
+yr_var: yr
+mnth_var: mnth
+season_var: season
+hr_var: hr
+holiday_var: holiday
+workingday_var: workingday
+weekday_var: weekday
+weathersit_var: weathersit
+temp_var: temp
+atemp_var: atemp
+hum_var: hum
+windspeed_var: windspeed
+
+# Set train/test split
+test_size: 0.20
+
+# Set the random seed
+random_state: 243
+adstock_max_lag: 3
